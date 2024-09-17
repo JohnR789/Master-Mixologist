@@ -15,6 +15,7 @@ Favorites: Save and manage your favorite drink recipes.
 Responsive Design: Optimized for both desktop and mobile devices.
 User-Friendly Interface: Enhanced UI/UX with icons, loading indicators, and feedback messages.
 
+ demo: https://johnr789.github.io/Mikeys-Mixology/
 
 Installation
 To run the Master Mixologist application locally, follow these steps:
