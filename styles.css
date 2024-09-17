@@ -1,99 +1,254 @@
-/* General styles */
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body Styling */
 body {
-    font-family: 'Helvetica Neue', sans-serif;
-    background: linear-gradient(135deg, #ffcc70, #ff944d);
-    color: #333;
-    line-height: 1.6;
-}
-
-header {
-    text-align: center;
-    padding: 2rem;
-    background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-}
-
-h1 {
-    font-size: 3rem;
-    color: #fff;
-}
-
-p {
-    color: #fff;
-}
-
-main {
-    padding: 2rem;
+    font-family: 'Roboto', sans-serif;
+    background-color: #1a1a1a;
+    color: #FFFFFF;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background-image: url('/Users/bcpadmin/Downloads/colorful-palm-silhouettes-background/sunsetvice.jpg'); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
-.form-section {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-    margin-bottom: 2rem;
-}
-
-label, select, button {
-    display: block;
-    width: 100%;
-    margin-bottom: 1rem;
-}
-
-select, button {
-    padding: 0.5rem;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-button {
-    background-color: #ff944d;
-    color: white;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-button:hover {
-    background-color: #ff5500;
-}
-
-#randomDrink {
-    background-color: #4db8ff;
-}
-
-#randomDrink:hover {
-    background-color: #1a8cff;
-}
-
-/* Recipe Display */
-#recipeDisplay {
-    display: none;
-    background: rgba(255, 255, 255, 0.8);
-    padding: 2rem;
-    border-radius: 10px;
+/* Loading Spinner */
+.spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 8px solid rgba(255, 255, 255, 0.1);
+    border-top: 8px solid #FF6EC7;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    z-index: 1000;
 }
 
 .hidden {
     display: none;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: rgba(0, 0, 0, 0.1);
-    color: #fff;
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Toast Notification */
+.toast {
     position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #00FFFF;
+    color: #1a1a1a;
+    padding: 15px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.toast.show {
+    opacity: 1;
+}
+
+/* Container Styling */
+.container {
+    text-align: center;
+    background: rgba(26, 26, 26, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+    max-width: 500px;
+    width: 90%;
+    margin: 20px;
+    backdrop-filter: blur(5px);
+}
+
+/* Heading Styles */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #FF6EC7;
+    text-shadow: 0 0 10px #FF6EC7, 0 0 20px #FF6EC7, 0 0 30px #FF6EC7;
+    font-weight: 700;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #00FFFF;
+    font-weight: 400;
+}
+
+/* Random Drink Section */
+.random-drink h2 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: #FF6EC7;
+    font-weight: 700;
+}
+
+.random-drink {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Input Group Styling */
+.input-group {
+    margin-bottom: 15px;
+    position: relative;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: #FF6EC7;
+}
+
+input {
     width: 100%;
-    bottom: 0;
+    padding: 12px;
+    border: 1px solid #FF6EC7;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    background-color: #00FFFF;
+    color: #1a1a1a;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button i {
+    margin-right: 8px;
+}
+
+button:hover {
+    background-color: #FF6EC7;
+    transform: scale(1.05);
+}
+
+/* View Recipe Button Styling */
+.view-recipe-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #00FFFF;
+    color: #1a1a1a;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.view-recipe-button:hover {
+    background-color: #FF6EC7;
+    transform: scale(1.05);
+}
+
+/* Recipe and Ingredient Info */
+#recipe-container, #ingredient-info, #favorites-container {
+    margin-top: 20px;
+    font-size: 1rem;
+    text-align: left;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+#recipe-container h2, #ingredient-info h3, .favorite-recipe h2 {
+    font-weight: 700;
+}
+
+#recipe-container ul, #recipe-container ol {
+    padding-left: 20px;
+}
+
+/* Favorite Recipe Styling */
+.favorite-recipe {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.favorite-recipe button {
+    margin-top: 10px;
+}
+
+/* Links */
+a {
+    color: #00FFFF;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FF6EC7;
+}
+
+/* Adjusted Font Sizes for Headings */
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .container {
+        padding: 20px;
+        margin: 10px;
+        width: 95%;
+    }
+
+    button {
+        font-size: 1rem;
+    }
 }

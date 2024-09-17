@@ -2,34 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Master Mixologist</title>
+    <!-- Include Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <!-- Link to CSS -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Include Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/f595e62a2d.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <!-- Loading Spinner -->
+    <div id="loading-spinner" class="spinner hidden"></div>
+
     <div class="container">
-        <h1>Master Mixologist</h1>
+        <h1><i class="fas fa-cocktail"></i> Master Mixologist</h1>
         <p>Find your next alcoholic drink of choice</p>
+
+        <!-- Random Drink Section -->
+        <div class="random-drink">
+            <h2><i class="fas fa-random"></i> Discover New Drinks</h2>
+            <div id="random-drink-container"></div>
+        </div>
+
+        <!-- Drink Search Parameters -->
         <div class="input-group">
-            <label for="flavor">Desired Flavor:</label>
+            <label for="flavor"><i class="fas fa-flask"></i> Desired Flavor:</label>
             <input type="text" id="flavor" placeholder="e.g., Sweet, Bitter, Spicy">
         </div>
         <div class="input-group">
-            <label for="alcohol">Alcohol Type:</label>
+            <label for="alcohol"><i class="fas fa-wine-bottle"></i> Alcohol Type:</label>
             <input type="text" id="alcohol" placeholder="e.g., Vodka, Rum, Whiskey">
         </div>
         <div class="input-group">
-            <label for="mixer">Mixer of Choice:</label>
+            <label for="mixer"><i class="fas fa-glass-whiskey"></i> Mixer of Choice:</label>
             <input type="text" id="mixer" placeholder="e.g., Soda, Juice, Tonic">
         </div>
-        <button id="generate-button">Generate Drink Recipe</button>
-        <button id="random-button">Random Drink Recipe</button>
+
+        <button id="generate-button"><i class="fas fa-search"></i> Generate Drink Recipe</button>
+        <button id="save-favorite-button"><i class="fas fa-heart"></i> Save to Favorites</button>
+        <button id="view-favorites-button"><i class="fas fa-bookmark"></i> View Favorites</button>
+
         <div id="recipe-container"></div>
+        <div id="ingredient-info"></div>
+        <div id="favorites-container"></div>
     </div>
-    <!-- Ensure the script.js file is correctly referenced -->
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast hidden"></div>
+
+    <!-- Link to JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
 
 
 
